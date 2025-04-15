@@ -12,17 +12,47 @@ import streamlit as st
 
 st.set_page_config(page_title="Password Strength Meter", page_icon=":lock:" ,layout="centered")
 
-#costum css
+# custom css
 st.markdown(
     """
     <style>
-    .main{text-align: center; }
-    .stTextInput{width: 60% !important margin:auto;}
-    .stButton{width: 50%; background-color: #000000; color: #ffffff; font-size: 18px; align-items: center;}
-    .stButton:hover{background-color: #000000; color: #ffffff;}
-
- </style>
-""",unsafe_allow_html=True)
+    .main {
+        text-align: center;
+    }
+    input[type="password"] {
+        width: 100% !important;
+        max-width: 400px;
+        margin: auto;
+        display: block;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+    button[kind="primary"] {
+        width: 100%;
+        max-width: 200px;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 8px;
+        transition: 0.3s ease;
+    }
+    button[kind="primary"]:hover {
+        background-color: #222222;
+        color: #ffffff;
+    }
+    .stMarkdown, .stTextInput {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Page title
 st.title("Password Strength Meter")
